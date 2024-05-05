@@ -39,6 +39,11 @@ const Game = (() => {
     }
 
     const updateCurrentPlayer = () => {
+        if (checkForTie(Gameboard.getGameboard())){
+            isGameRunning = false
+            Game.printTie()
+            return
+        }
         if (checkIfPlayerWon(Gameboard.getGameboard(), players[currentPlayer].sign)){
             isGameRunning = false
             Game.printWinner(players[currentPlayer].playerName)
@@ -54,6 +59,12 @@ const Game = (() => {
         if (!isGameRunning) return
         let index = parseInt(event.target.id.slice(-1))
         Gameboard.write(index, players[currentPlayer].sign)
+    }
+
+    const printTie = () => {
+        modal.style.display = "flex"
+        winTextDiv.textContent = `It's a tie!`
+        isGameOver = true
     }
 
     const printWinner = (name) => {
@@ -72,7 +83,7 @@ const Game = (() => {
         document.querySelector("#player2Input").disabled = false
     }
 
-    return {start, updateCurrentPlayer, handleClick, printWinner, clearData}
+    return {start, updateCurrentPlayer, handleClick, printTie, printWinner, clearData}
 })();
 
 const Gameboard = (() => {
@@ -104,6 +115,15 @@ function createPlayer(name, sign){
     name.disabled = true
     playerName = name.value
     return {playerName, sign}
+}
+
+function checkForTie(board){
+    let tie = 9;
+    for (let i = 0; i < 9; i++){
+        if (board[i] == ""){tie--}
+    } 
+    if (tie == 9) return true
+    return false   
 }
 
 function checkIfPlayerWon(board, sign){
