@@ -39,14 +39,16 @@ const Game = (() => {
     }
 
     const updateCurrentPlayer = () => {
-        if (checkForTie(Gameboard.getGameboard())){
-            isGameRunning = false
-            Game.printTie()
-            return
-        }
+
         if (checkIfPlayerWon(Gameboard.getGameboard(), players[currentPlayer].sign)){
             isGameRunning = false
             Game.printWinner(players[currentPlayer].playerName)
+            return
+        }
+
+        if (checkForTie(Gameboard.getGameboard())){
+            isGameRunning = false
+            Game.printTie()
             return
         }
 
