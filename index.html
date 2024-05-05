@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Tic-Tac-Toe!</h1>
+    </header>
+    <main>
+        <div id="playerNames">
+            <div class="playerData">
+                <label for="player1Input">Player 1</label>
+                <input id="player1Input" type="text" placeholder="Your name">
+            </div>
+            <div class="playerData">
+                <label for="player2Input">Player 2</label>
+                <input id="player2Input" type="text" placeholder="Your name">
+            </div>
+        </div>
+
+        <div id="start">
+            <button id="StartBtn">Start</button>
+        </div>
+
+        <div class="modal">
+            <h1 id="h1modal"></h1>
+        </div>
+
+        <div id="gameboard">
+            <div id="gamebox0" class="gamebox"></div>
+            <div id="gamebox1" class="gamebox"></div>
+            <div id="gamebox2" class="gamebox"></div>
+            <div id="gamebox3" class="gamebox"></div>
+            <div id="gamebox4" class="gamebox"></div>
+            <div id="gamebox5" class="gamebox"></div>
+            <div id="gamebox6" class="gamebox"></div>
+            <div id="gamebox7" class="gamebox"></div>
+            <div id="gamebox8" class="gamebox"></div>
+        </div>
+
+        <div id="clearDiv">
+            <button id="clearBtn">Clear Game</button>
+        </div>
+    </main>
+    <footer>Developed by&nbsp;<a target="_blank" href="https://github.com/vmarcoo/">vmarcoo</a>&nbsp;for&nbsp;<a target="_blank" href="https://theodinproject.com/">The Odin Project's JavaScript Course</a></footer>
+</body>
+<script src="./script.js"></script>
+</html>
